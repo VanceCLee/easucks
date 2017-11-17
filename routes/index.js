@@ -26,6 +26,14 @@ router.post('/comments', function(req, res, next) {
   });
 });
 
+router.post('/pledge', function(req, res, next) {
+  var comment = new Comment(req.body);
+  comment.save(function(err, comment){
+    if(err){ return next(err); }
+    res.json(comment);
+  });
+});
+
 router.param('comment', function(req, res, next, id) {
   var query = Comment.findById(id);
   query.exec(function (err, comment){
