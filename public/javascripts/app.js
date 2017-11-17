@@ -22,7 +22,7 @@ angular.module('comment', [])
       return $http.put('/pledge/' + pledges[place]._id)
         .success(function(data){
           console.log("pledge worked");
-          pledges[place].pledge = data.pledge;
+          pledges[place].pledges = data.pledges;
         });
     };
     $scope.delete = function(comment) {
@@ -48,11 +48,11 @@ angular.module('comment', [])
     $scope.getAll();
     $scope.getSlightlyMore();
     $scope.addPledges = function() {
-      var newcomment = {title:"downVote",upvotes:0};
+      var newcomment = {title:"downVote",pledges:0};
       $scope.formContent='';
       $http.post('/pledge', newcomment).success(function(data){
       });
-      var newcomment = {title:"eaSucks",upvotes:0};
+      var newcomment = {title:"eaSucks",pledges:0};
       $scope.formContent='';
       $http.post('/pledge', newcomment).success(function(data){
       });
