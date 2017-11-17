@@ -6,10 +6,12 @@
   <script src="javascripts/app.js"></script>
 
 </head>
-    
-  </div>
-  <span ng-click="pledge"><img src="stylesheets/ealogo.png"></span>
-  <span ng-click="pledge"><img src="stylesheets/darthdown.png"></span>
+   <div ng-app="pledge in pledges | orderBy: '-upvotes'">
+    <span ng-click="pledge"><img src="stylesheets/ealogo.png"></span>
+    {{pledges[0].pledge}}
+    <span ng-click="pledge"><img src="stylesheets/darthdown.png"></span>
+    {{pledges[1].pledge}}
+  </div> 
 <body ng-app="comment" ng-controller="MainCtrl">
 <div class="row">
 <div class="col-md-6 col-md-offset-3">
@@ -21,9 +23,7 @@
     <input type="text" ng-model="formContent"></input>
     <button type="submit">Feel free to complain!</button>
   </form>
-  <div>
-    {{test}}
-  </div>
+
   <div ng-repeat="comment in comments | orderBy: '-upvotes'">
     <span class="glyphicon glyphicon-remove" ng-click="delete(comment)"></span>
     <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(comment)"></span>
