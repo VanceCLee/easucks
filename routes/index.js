@@ -2,11 +2,19 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var Comment = mongoose.model('Comment');
+var Pledge = mongoose.model('Pledges');
 
 router.get('/comments', function(req, res, next) {
   Comment.find(function(err, comments){
     if(err){ return next(err); }
     res.json(comments);
+  });
+});
+
+router.get('/pledges', function(req, res, next) {
+  Pledges.find(function(err, pledges){
+    if(err){ return next(err); }
+    res.json(pledges);
   });
 });
 
@@ -36,6 +44,13 @@ router.put('/comments/:comment/upvote', function(req, res, next) {
   req.comment.upvote(function(err, comment){
     if (err) { return next(err); }
     res.json(comment);
+  });
+});
+
+router.put('/pledge/:pledge', function(req, res, next) {
+  req.pledge.pledge(function(err, pledge){
+    if (err) { return next(err); }
+    res.json(pledge);
   });
 });
 
