@@ -4,13 +4,24 @@
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
   <script src="javascripts/app.js"></script>
+  <link href="stylesheets/style.css" rel="stylesheet">
 
 </head>
    <div ng-app="pledge in pledges | orderBy: '-upvotes'">
-    <span ng-click="pledge"><img src="stylesheets/ealogo.png"></span>
-    {{pledges[0].pledge}}
-    <span ng-click="pledge"><img src="stylesheets/darthdown.png"></span>
-    {{pledges[1].pledge}}
+    <table>
+      <tr>
+        <td><span>Think EA sucks? Express your rage like an <br> adult by clicking this Darth Vader Downvote!</span></td>
+        <td><span>Click to pledge to not buy Battlefront II!</span></td>
+      </tr>
+      <tr>
+        <td><span id="downVote" ng-click="pledge"><img src="stylesheets/darthdown.png"></span></td>
+        <td><span id="eaSucks" ng-click="pledge"><img src="stylesheets/ealogo.png"></span></td>
+      </tr>
+      <tr>
+        <td>{{pledges[0].pledge}}</td>
+        <td>{{pledges[1].pledge}}</td>
+      </tr>
+    </table>
   </div> 
 <body ng-app="comment" ng-controller="MainCtrl">
 <div class="row">

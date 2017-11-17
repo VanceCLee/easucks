@@ -4,9 +4,20 @@ body {
 }
 
 a {
-  color: #00B7FF;
 }
 
 img {
 	align-content: center;
+}
+
+table {
+	align-content: center;
+	align-items: center;
+	align-self: center;
+	text-align: center;
+	margin: auto;
+}
+
+td {
+	padding: 10px;
 }
