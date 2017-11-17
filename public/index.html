@@ -1,21 +1,25 @@
 <html>
 <head>
-  <title>Comments</title>
+  <title>EA Sucks</title>
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
   <script src="javascripts/app.js"></script>
 
 </head>
+    
+  </div>
+  <span ng-click="pledge"><img src="stylesheets/ealogo.png"></span>
+  <span ng-click="pledge"><img src="stylesheets/darthdown.png"></span>
 <body ng-app="comment" ng-controller="MainCtrl">
 <div class="row">
 <div class="col-md-6 col-md-offset-3">
 <div class="page-header"> 
-  <h1>Comments </h1>
-</div>
 
+</div>
+  <h1>Complaints</h1>
   <form ng-submit="addComment()" style = "margin-top30px;">
     <input type="text" ng-model="formContent"></input>
-    <button type="submit">Add Comment</button>
+    <button type="submit">Feel free to complain!</button>
   </form>
   <div>
     {{test}}
